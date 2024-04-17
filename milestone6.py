@@ -39,8 +39,8 @@ if submit_button:
     #os.chdir(csv_dir)
     # Load the data from the other local files
     # Load the data from the other GitHub files
-    csv_url1 = "https://raw.githubusercontent.com/Pragnaidu/milestone/blob/main/liveCustomerList.csv"
-    csv_url2 = "https://raw.githubusercontent.com/Pragnaidu/milestone/blob/main/liveBankAcct.csv"
+    csv_url1 = "https://raw.githubusercontent.com/Pragnaidu/milestone/main/liveCustomerList.csv"
+    csv_url2 = "https://raw.githubusercontent.com/Pragnaidu/milestone/main/liveBankAcct.csv"
     csv_df1 = pd.read_csv(csv_url1)
     csv_df2 = pd.read_csv(csv_url2)
 
