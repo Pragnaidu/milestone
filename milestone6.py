@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import requests
 import shutil
+from io import StringIO
 
 # Get the current working directory
 home_dir = os.path.expanduser("~")
@@ -29,18 +30,23 @@ if submit_button:
         shutil.copyfileobj(response.raw, out_file)
 
     # Load the data from the local file
-    text_df = pd.read_csv(inputFile)
+    #text_df = pd.read_csv(inputFile)
+    text_df = pd.read_csv(StringIO(text_data))
 
     # Load the data from the other local files
     
-    csv_dir = os.path.join(home_dir, "Documents" , "Milestone3Files")
-
+    #csv_dir = os.path.join(home_dir, "Documents" , "Milestone3Files")
     # Change the working directory to the one where the CSV files are located
-    os.chdir(csv_dir)
-
+    #os.chdir(csv_dir)
     # Load the data from the other local files
-    csv_df1 = pd.read_csv("liveCustomerList.csv")
-    csv_df2 = pd.read_csv("liveBankAcct.csv")
+    # Load the data from the other GitHub files
+    csv_url1 = "https://raw.githubusercontent.com/Pragnaidu/milestone/blob/main/liveCustomerList.csv"
+    csv_url2 = "https://raw.githubusercontent.com/Pragnaidu/milestone/blob/main/liveBankAcct.csv"
+    csv_df1 = pd.read_csv(csv_url1)
+    csv_df2 = pd.read_csv(csv_url2)
+
+    #csv_df1 = pd.read_csv("liveCustomerList.csv")
+    #csv_df2 = pd.read_csv("liveBankAcct.csv")
     
     # Merge the data from the different files
     merged_df1 = pd.merge(text_df, csv_df1[['custID', 'firstName', 'lastName']], on='custID', how='left')
