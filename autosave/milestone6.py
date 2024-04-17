@@ -39,7 +39,7 @@ if submit_button:
 
     # Load the data from the other local files
     csv_df1 = pd.read_csv("liveCustomerList.csv")
-    csv_df2 = pd.read_csv("liveBankAcct.csv")
+    csv_df2 = pd.read_cßsv("liveBankAcct.csv")
     
     # Merge the data from the different files
     merged_df1 = pd.merge(text_df, csv_df1[['custID', 'firstName', 'lastName']], on='custID', how='left')
