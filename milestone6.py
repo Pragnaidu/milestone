@@ -29,9 +29,8 @@ if submit_button:
     with open(inputFile, 'wb') as out_file:
         shutil.copyfileobj(response.raw, out_file)
 
-    # Load the data from the local file
-    #text_df = pd.read_csv(inputFile)
-    text_df = pd.read_csv(StringIO(text_data))
+    text_df = pd.read_csv(inputFile)
+    #text_df = pd.read_csv(StringIO(text_data))
 
     # Load the data from the other local files
     
