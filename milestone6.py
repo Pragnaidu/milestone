@@ -10,7 +10,7 @@ home_dir = os.path.expanduser("~")
 os.chdir(home_dir)
 
 # Header
-st.markdown("Insert your link here")
+st.markdown("Milestone 3")
 
 # Input box and submit button
 url = st.text_input("Enter a URL:")
